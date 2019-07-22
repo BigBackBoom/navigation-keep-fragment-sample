@@ -33,6 +33,7 @@ class KeepStateNavigator(
         }
 
         var fragment = manager.findFragmentByTag(tag)
+        fragment?.arguments = args
         if (fragment == null) {
             val className = destination.className
             fragment = manager.fragmentFactory.instantiate(context.classLoader, className)
